@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Tess AI - Proposta de Créditos</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="background-gradient"></div>
+    
+    <main class="calculator-container">
+        <!-- HEADER -->
+        <header class="header-section">
+            <div class="logo-area">
+                <h1>Calculadora Tess AI</h1>
+                <p class="subtitle">Simule sua proposta de créditos e suporte</p>
+            </div>
+        </header>
+
+        <!-- STEPPER INDICATOR -->
+        <div class="stepper">
+            <div class="step active" data-step="1">
+                <div class="step-number">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                </div>
+                <div class="step-label">Plano Base</div>
+            </div>
+            <div class="step-divider"></div>
+            <div class="step" data-step="2">
+                <div class="step-number">2</div>
+                <div class="step-label">Adicionais</div>
+            </div>
+            <div class="step-divider"></div>
+            <div class="step" data-step="3">
+                <div class="step-number">3</div>
+                <div class="step-label">Resumo</div>
+            </div>
+        </div>
+
+        <!-- STEP 1: PLANO BASE -->
+        <section id="step-1" class="step-content active">
+            <div class="step-header">
+                <h2>Selecione seu Plano</h2>
+                <p>Escolha o plano que melhor se adequa às suas necessidades</p>
+            </div>
+
+            <div class="plans-grid">
+                <!-- PLANO BASIC -->
+                <div class="plan-card" data-plan="basic">
+                    <div class="plan-header">
+                        <h3>Basic</h3>
+                        <span class="plan-badge">Popular</span>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">R$</span>
+                        <span class="amount">79</span>
+                        <span class="period">/mês</span>
+                    </div>
+                    <div class="plan-credits">
+                        <p class="credits-value">1.000 créditos/mês</p>
+                        <p class="credits-desc">incluindo refil mensal + bônus diário</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><span class="feature-icon">✓</span>Acesso ao Marketplace com 250+ modelos</li>
+                        <li><span class="feature-icon">✓</span>Usuários ilimitados</li>
+                        <li><span class="feature-icon">✓</span>Bônus diários de créditos</li>
+                        <li><span class="feature-icon">✓</span>Parental Control</li>
+                        <li><span class="feature-icon">✓</span>Smart/Max Memory</li>
+                        <li><span class="feature-icon">✓</span>Ferramentas multimídia</li>
+                    </ul>
+                    <button class="plan-select-btn">Selecionar</button>
+                </div>
+
+                <!-- PLANO PRO -->
+                <div class="plan-card" data-plan="pro">
+                    <div class="plan-header">
+                        <h3>PRO</h3>
+                        <span class="plan-badge">Recomendado</span>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">R$</span>
+                        <span class="amount">249</span>
+                        <span class="period">/mês</span>
+                    </div>
+                    <div class="plan-credits">
+                        <p class="credits-value">5.000 créditos/mês</p>
+                        <p class="credits-desc">incluindo refil mensal + bônus diário</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><span class="feature-icon">✓</span>Tudo do plano Basic</li>
+                        <li><span class="feature-icon">✓</span>Instruções Dinâmicas do Agente</li>
+                        <li><span class="feature-icon">✓</span>Monetização do Agente</li>
+                        <li><span class="feature-icon">✓</span>Deep Analysis Mode</li>
+                        <li><span class="feature-icon">✓</span>Incorporação de Chat</li>
+                        <li><span class="feature-icon">✓</span>API TESS</li>
+                    </ul>
+                    <button class="plan-select-btn">Selecionar</button>
+                </div>
+
+                <!-- PLANO TEAM -->
+                <div class="plan-card" data-plan="team">
+                    <div class="plan-header">
+                        <h3>Team</h3>
+                        <span class="plan-badge">Empresas</span>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">R$</span>
+                        <span class="amount">599</span>
+                        <span class="period">/mês</span>
+                    </div>
+                    <div class="plan-credits">
+                        <p class="credits-value">25.000 créditos/mês</p>
+                        <p class="credits-desc">incluindo refil mensal + bônus diário</p>
+                    </div>
+                    <ul class="plan-features">
+                        <li><span class="feature-icon">✓</span>Tudo do plano PRO</li>
+                        <li><span class="feature-icon">✓</span>Adicionar membros premium</li>
+                        <li><span class="feature-icon">✓</span>Usuários gratuitos/lite</li>
+                        <li><span class="feature-icon">✓</span>Análise de dados avançada</li>
+                        <li><span class="feature-icon">✓</span>Suporte prioritário</li>
+                        <li><span class="feature-icon">✓</span>SLAs garantidos</li>
+                    </ul>
+                    <button class="plan-select-btn">Selecionar</button>
+                </div>
+            </div>
+
+            <!-- SELECTED PLAN CONFIRMATION -->
+            <div id="plan-confirmation" class="plan-confirmation hidden">
+                <p>Plano selecionado: <strong id="selected-plan-name">-</strong></p>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="step-actions">
+                <button class="btn-secondary" onclick="resetCalculator()">Cancelar</button>
+                <button class="btn-primary" id="btn-next-1" disabled>Continuar</button>
+            </div>
+        </section>
+
+        <!-- STEP 2: ADICIONAIS -->
+        <section id="step-2" class="step-content">
+            <div class="step-header">
+                <h2>Adicione Serviços</h2>
+                <p>Combine com suporte e treinamento conforme necessário</p>
+            </div>
+
+            <!-- SUPPORT SECTION -->
+            <div class="addon-section">
+                <div class="section-title">
+                    <h3>Suporte Tess AI</h3>
+                    <p class="section-desc">Escolha o nível de suporte ideal para sua equipe</p>
+                </div>
+
+                <div class="support-options">
+                    <!-- STANDARD SUPPORT -->
+                    <div class="addon-card" data-addon="support-standard">
+                        <div class="addon-header">
+                            <h4>Standard Support</h4>
+                            <p class="addon-subtitle">Acesso essencial</p>
+                        </div>
+                        <div class="addon-details">
+                            <ul class="addon-features">
+                                <li>Calendário de lives para implementação</li>
+                                <li>AI University (acesso completo)</li>
+                                <li>Help Center</li>
+                                <li>ChatAI Support padrão</li>
+                                <li>Onboarding padrão</li>
+                            </ul>
+                            <p class="addon-note">Sem Account Manager</p>
+                        </div>
+                        <div class="addon-price">Gratuito</div>
+                        <button class="addon-select-btn" data-price="0">Adicionar</button>
+                    </div>
+
+                    <!-- PREMIUM SUPPORT -->
+                    <div class="addon-card" data-addon="support-premium">
+                        <div class="addon-header">
+                            <h4>Premium Support</h4>
+                            <p class="addon-subtitle">Suporte completo</p>
+                        </div>
+                        <div class="addon-details">
+                            <div class="support-tiers">
+                                <div class="tier">
+                                    <p class="tier-label"><strong>Até 50 usuários:</strong> R$ 10.000/mês</p>
+                                </div>
+                                <div class="tier">
+                                    <p class="tier-label"><strong>Até 100 usuários:</strong> R$ 20.000/mês</p>
+                                </div>
+                                <div class="tier">
+                                    <p class="tier-label"><strong>Acima de 100 usuários:</strong> R$ 30.000/mês</p>
+                                </div>
+                            </div>
+                            <ul class="addon-features">
+                                <li>Tudo do Standard +</li>
+                                <li>Account Manager dedicado</li>
+                                <li>Onboarding customizado</li>
+                                <li>Grupo no WhatsApp</li>
+                            </ul>
+                        </div>
+                        <div class="addon-selector">
+                            <label for="support-users">Selecione número de usuários:</label>
+                            <select id="support-users" class="addon-select">
+                                <option value="">-- Escolha --</option>
+                                <option value="10000">Até 50 usuários - R$ 10.000/mês</option>
+                                <option value="20000">Até 100 usuários - R$ 20.000/mês</option>
+                                <option value="30000">Acima de 100 usuários - R$ 30.000/mês</option>
+                            </select>
+                        </div>
+                        <button class="addon-select-btn" disabled id="btn-add-support">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ONBOARDING SECTION -->
+            <div class="addon-section">
+                <div class="section-title">
+                    <h3>Onboarding</h3>
+                    <p class="section-desc">Acelere a implementação com nossos especialistas</p>
+                </div>
+
+                <div class="onboarding-options">
+                    <!-- INITIAL ONBOARDING -->
+                    <div class="addon-card" data-addon="onboarding-initial">
+                        <div class="addon-header">
+                            <h4>Onboarding Inicial</h4>
+                            <p class="addon-subtitle">Para primeiros passos</p>
+                        </div>
+                        <div class="addon-details">
+                            <p>Recomendado para quem deseja iniciar com auxílio básico dos especialistas da equipe de Onboarding Tess AI.</p>
+                            <ul class="addon-features">
+                                <li>2 Sessões de 1,5h</li>
+                                <li>Suporte estruturado</li>
+                                <li>Documentação incluída</li>
+                            </ul>
+                        </div>
+                        <div class="addon-price">R$ 2.500</div>
+                        <button class="addon-select-btn" data-price="2500">Adicionar</button>
+                    </div>
+
+                    <!-- STRATEGIC ONBOARDING -->
+                    <div class="addon-card" data-addon="onboarding-strategic">
+                        <div class="addon-header">
+                            <h4>Onboarding Estratégico</h4>
+                            <p class="addon-subtitle">Para equipes</p>
+                        </div>
+                        <div class="addon-details">
+                            <p>Sessões nichadas para setores específicos com suporte extensivo e personalizado por departamento.</p>
+                            <ul class="addon-features">
+                                <li>10 Sessões de 1h cada</li>
+                                <li>Customização por setor</li>
+                                <li>Implementação de agentes</li>
+                            </ul>
+                        </div>
+                        <div class="addon-price">R$ 7.500</div>
+                        <button class="addon-select-btn" data-price="7500">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TRAINING SECTION -->
+            <div class="addon-section">
+                <div class="section-title">
+                    <h3>Treinamento Intensivo</h3>
+                    <p class="section-desc">Capacite sua equipe com conhecimento aprofundado</p>
+                </div>
+
+                <div class="training-options">
+                    <!-- INTENSIVE TRAINING -->
+                    <div class="addon-card" data-addon="training-intensive">
+                        <div class="addon-header">
+                            <h4>Treinamento 8h (Intensivo)</h4>
+                            <p class="addon-subtitle">2 dias × 4h</p>
+                        </div>
+                        <div class="addon-details">
+                            <div class="training-format">
+                                <p><strong>Online:</strong> R$ 18.000 (até 20 participantes)</p>
+                                <p><strong>Presencial:</strong> R$ 28.000 (até 20 participantes)</p>
+                            </div>
+                            <ul class="addon-features">
+                                <li>10 Aulas Gravadas (12 meses)</li>
+                                <li>Agentes IA Prontos para Uso</li>
+                                <li>Certificado Pareto</li>
+                                <li>Sessões de Alinhamento (2 × 1,5h)</li>
+                            </ul>
+                        </div>
+                        <div class="addon-selector">
+                            <label for="training-format-intensive">Formato:</label>
+                            <select id="training-format-intensive" class="addon-select">
+                                <option value="">-- Escolha --</option>
+                                <option value="18000">Online - R$ 18.000</option>
+                                <option value="28000">Presencial - R$ 28.000</option>
+                            </select>
+                        </div>
+                        <button class="addon-select-btn" disabled id="btn-add-intensive-training">Adicionar</button>
+                    </div>
+
+                    <!-- EXTENDED TRAINING -->
+                    <div class="addon-card" data-addon="training-extended">
+                        <div class="addon-header">
+                            <h4>Treinamento 18h (Estendido)</h4>
+                            <p class="addon-subtitle">6 semanas × 3h</p>
+                        </div>
+                        <div class="addon-details">
+                            <div class="training-format">
+                                <p><strong>Online:</strong> R$ 42.000 (até 20 participantes)</p>
+                                <p><strong>Presencial:</strong> R$ 55.000 (até 20 participantes)</p>
+                            </div>
+                            <ul class="addon-features">
+                                <li>10 Aulas Gravadas (12 meses)</li>
+                                <li>Agentes IA Prontos para Uso</li>
+                                <li>Certificado Pareto</li>
+                                <li>Sessões de Alinhamento (2 × 1,5h)</li>
+                            </ul>
+                        </div>
+                        <div class="addon-selector">
+                            <label for="training-format-extended">Formato:</label>
+                            <select id="training-format-extended" class="addon-select">
+                                <option value="">-- Escolha --</option>
+                                <option value="42000">Online - R$ 42.000</option>
+                                <option value="55000">Presencial - R$ 55.000</option>
+                            </select>
+                        </div>
+                        <button class="addon-select-btn" disabled id="btn-add-extended-training">Adicionar</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SELECTED ADDONS -->
+            <div id="addons-confirmation" class="addons-confirmation hidden">
+                <h4>Serviços selecionados:</h4>
+                <ul id="addons-list"></ul>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="step-actions">
+                <button class="btn-secondary" onclick="previousStep()">Voltar</button>
+                <button class="btn-primary" id="btn-next-2">Continuar</button>
+            </div>
+        </section>
+
+        <!-- STEP 3: RESUMO -->
+        <section id="step-3" class="step-content">
+            <div class="step-header">
+                <h2>Resumo da Proposta</h2>
+                <p>Revise os detalhes antes de finalizar</p>
+            </div>
+
+            <!-- SUMMARY CARDS -->
+            <div class="summary-grid">
+                <!-- PLAN SUMMARY -->
+                <div class="summary-card">
+                    <h3>Plano Selecionado</h3>
+                    <div class="summary-content">
+                        <p class="summary-label">Plano</p>
+                        <p class="summary-value" id="summary-plan">-</p>
+                        <p class="summary-label">Mensalidade</p>
+                        <p class="summary-value" id="summary-plan-price">-</p>
+                        <p class="summary-label">Créditos</p>
+                        <p class="summary-value" id="summary-plan-credits">-</p>
+                    </div>
+                </div>
+
+                <!-- ADDONS SUMMARY -->
+                <div class="summary-card">
+                    <h3>Serviços Adicionais</h3>
+                    <div class="summary-content">
+                        <div id="summary-addons-list">
+                            <p class="summary-empty">Nenhum serviço adicional</p>
+                        </div>
+                        <div class="summary-subtotal">
+                            <p class="summary-label">Subtotal Adicionais</p>
+                            <p class="summary-value" id="summary-addons-total">R$ 0</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TOTAL SUMMARY -->
+                <div class="summary-card total-card">
+                    <h3>Valor Total Mensal</h3>
+                    <div class="summary-content">
+                        <div class="total-breakdown">
+                            <div class="breakdown-row">
+                                <span>Plano:</span>
+                                <span id="total-plan">R$ 0</span>
+                            </div>
+                            <div class="breakdown-row">
+                                <span>Adicionais:</span>
+                                <span id="total-addons">R$ 0</span>
+                            </div>
+                            <div class="breakdown-row total-row">
+                                <span><strong>Total:</strong></span>
+                                <span id="total-final"><strong>R$ 0</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- BENEFITS HIGHLIGHTED -->
+            <div class="benefits-section">
+                <h3>O que você ganha com este plano</h3>
+                <ul class="benefits-list">
+                    <li><span class="benefit-icon">✓</span><span>Acesso imediato a 250+ modelos de IA</span></li>
+                    <li><span class="benefit-icon">✓</span><span>Suporte dedicado conforme contratado</span></li>
+                    <li><span class="benefit-icon">✓</span><span>Treinamento especializado (se incluído)</span></li>
+                    <li><span class="benefit-icon">✓</span><span>Créditos renováveis mensalmente</span></li>
+                    <li><span class="benefit-icon">✓</span><span>Bônus diários complementares</span></li>
+                    <li><span class="benefit-icon">✓</span><span>Acesso a AI University</span></li>
+                </ul>
+            </div>
+
+            <!-- NEXT STEPS -->
+            <div class="next-steps-section">
+                <h3>Próximos Passos</h3>
+                <ol class="next-steps-list">
+                    <li>
+                        <strong>Revisar Proposta</strong>
+                        <p>Confira se todos os detalhes estão corretos</p>
+                    </li>
+                    <li>
+                        <strong>Contato com Especialista</strong>
+                        <p>Você receberá contato de nosso time em até 24h</p>
+                    </li>
+                    <li>
+                        <strong>Criar Conta</strong>
+                        <p>Inicie sua jornada com Tess AI imediatamente</p>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- ACTION BUTTONS -->
+            <div class="step-actions">
+                <button class="btn-secondary" onclick="previousStep()">Voltar</button>
+                <button class="btn-primary" onclick="finishCalculator()">Concluído</button>
+            </div>
+        </section>
+
+        <!-- SUCCESS MESSAGE -->
+        <div id="success-message" class="success-message hidden">
+            <div class="success-content">
+                <div class="success-icon">✓</div>
+                <h2>Proposta Enviada com Sucesso!</h2>
+                <p>Você receberá contato de nosso time em até 24 horas para confirmar os detalhes.</p>
+                <div class="success-details">
+                    <p><strong>Resumo:</strong></p>
+                    <p id="success-summary">-</p>
+                </div>
+                <button class="btn-primary" onclick="location.reload()">Criar Nova Proposta</button>
+                <button class="btn-secondary" onclick="goToHome()">Voltar ao Início</button>
+            </div>
+        </div>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
